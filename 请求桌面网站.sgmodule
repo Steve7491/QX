@@ -1,0 +1,16 @@
+#!name=请求桌面网站
+#!desc=请求桌面网站
+#!system=ios
+
+[Header Rewrite]
+
+https?://.*\.sina.cn header-del Cookie
+https?://.*\.sina(\.com)?\.cn header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://.*\.sina.cn header-replace Referer https://www.google.com
+
+
+//^https:\/\/finance\.sina\.com\.cn\/ header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2"
+
+//^https:\/\/finance\.sina\.cn\/ header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2"
+[MITM]
+hostname = %APPEND% *.sina.cn, *.sina.com.cn
