@@ -1,6 +1,0 @@
-#IPA安装，需配合Shu与捷径 itms-services://?action=download-manifest&url=https://appinstall.com
-
-^https://appinstall.com url script-echo-response https://raw.githubusercontent.com/Steve7491/QX/main/install.js
-
-hostname=appinstall.com
-simple_cert_hostname=appinstall.com
